@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongodb'
 
-interface IUtilitiesType {
+export interface IUtilitiesType {
   _id?: ObjectId
   name: string
   created_at?: Date

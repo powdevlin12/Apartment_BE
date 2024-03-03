@@ -60,3 +60,10 @@ export const USER_MESSAGE = {
 export const MEDIA_MESSAGE = {
   UPLOAD_IMAGE_SUCCESSFULLY: 'Upload image successfully'
 } as const
+
+export const UTILITIES_MESSAGE = {
+  CREATE_UTILITY_SUCCESS: 'Create utility success',
+  NAME_UTILITY_IS_NOT_EMPTY: 'Name utility is not empty',
+  NAME_LENGTH_MUST_BE_FROM_6_TO_30: 'Name length must be from from 6 to 30',
+  UTILITY_IS_EXIST: 'Utility is exist'
+} as const
