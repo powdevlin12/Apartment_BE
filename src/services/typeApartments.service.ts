@@ -16,6 +16,11 @@ class TypeApartmentService {
       message: TYPE_APARTMENTS_MESSAGE.CREATE_TYPE_APARTMENT_SUCCESS
     }
   }
+
+  async readAll() {
+    const result = await instanceDatabase().typeApartments.find({}).toArray()
+    return result
+  }
 }
 
 const typeApartmentService = new TypeApartmentService()

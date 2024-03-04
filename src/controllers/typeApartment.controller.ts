@@ -14,6 +14,12 @@ class TypeApartmentsController {
       })
     }
   }
+
+  async readAll(req: Request, res: Response) {
+    const result = await typeApartmentService.readAll()
+
+    return res.status(HTTP_STATUS.OK).json(result)
+  }
 }
 
 const typeApartmentsController = new TypeApartmentsController()
