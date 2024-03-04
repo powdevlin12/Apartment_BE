@@ -79,7 +79,7 @@ export default class DatabaseConnect {
     return this.db.collection(process.env.DB_COLLECTION_FOLLOWER as string)
   }
 
-  get apartment(): Collection<Apartment> {
+  get apartments(): Collection<Apartment> {
     return this.db.collection(process.env.DB_COLLECTION_APARTMENT as string)
   }
 

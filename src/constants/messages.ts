@@ -74,3 +74,10 @@ export const TYPE_APARTMENTS_MESSAGE = {
   NAME_LENGTH_MUST_BE_FROM_6_TO_30: 'Name length must be from from 6 to 30',
   TYPE_APARTMENT_IS_EXIST: 'type apartment is exist'
 } as const
+
+export const APARTMENTS_MESSAGE = {
+  CREATE_APARTMENT_SUCCESS: 'Create type apartment success',
+  NAME_APARTMENT_IS_NOT_EMPTY: 'Name type apartment is not empty',
+  NAME_LENGTH_MUST_BE_FROM_6_TO_30: 'Name length must be from from 6 to 30',
+  APARTMENT_IS_EXIST: 'type apartment is exist'
+} as const
