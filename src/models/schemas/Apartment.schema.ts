@@ -1,8 +1,8 @@
 import { ObjectId } from 'mongodb'
 
-type TStatus = 'free' | 'busy'
+export type TStatus = 'free' | 'busy'
 
-interface ApartmentTypes {
+export interface ApartmentTypes {
   _id?: ObjectId
   name: string
   price: number

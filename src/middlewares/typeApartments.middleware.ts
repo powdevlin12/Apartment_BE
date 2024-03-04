@@ -1,28 +1,28 @@
 import { checkSchema } from 'express-validator'
-import { UTILITIES_MESSAGE } from '~/constants/messages'
+import { TYPE_APARTMENTS_MESSAGE } from '~/constants/messages'
 import { instanceDatabase } from '~/services/database.service'
 
-export const createUtilitiesMiddleware = checkSchema(
+export const createTypeApartmentMiddleware = checkSchema(
   {
     name: {
       notEmpty: {
-        errorMessage: UTILITIES_MESSAGE.NAME_UTILITY_IS_NOT_EMPTY
+        errorMessage: TYPE_APARTMENTS_MESSAGE.NAME_TYPE_APARTMENT_IS_NOT_EMPTY
       },
       isLength: {
         options: {
           max: 30,
           min: 6
         },
-        errorMessage: UTILITIES_MESSAGE.NAME_LENGTH_MUST_BE_FROM_6_TO_30
+        errorMessage: TYPE_APARTMENTS_MESSAGE.NAME_LENGTH_MUST_BE_FROM_6_TO_30
       },
       custom: {
         options: async (value: string, { req }) => {
-          const utility = await instanceDatabase().utilities.findOne({
+          const utility = await instanceDatabase().typeApartments.findOne({
             name: value.toLocaleLowerCase()
           })
 
           if (utility) {
-            throw Error(UTILITIES_MESSAGE.UTILITY_IS_EXIST)
+            throw Error(TYPE_APARTMENTS_MESSAGE.TYPE_APARTMENT_IS_EXIST)
           }
 
           return true

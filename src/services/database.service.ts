@@ -5,6 +5,7 @@ import { RefreshToken } from '~/models/schemas/RefershToken.schema'
 import Follower from '~/models/schemas/Follower.schema'
 import Apartment from '~/models/schemas/Apartment.schema'
 import Utilities from '~/models/schemas/Utilities.schema'
+import TypeApartment from '~/models/schemas/TypeApartment.schema'
 dotenv.config()
 
 const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.s4rqtkw.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority&appName=Cluster0`
@@ -84,6 +85,10 @@ export default class DatabaseConnect {
 
   get utilities(): Collection<Utilities> {
     return this.db.collection(process.env.DB_COLLECTION_UTILITIES as string)
+  }
+
+  get typeApartments(): Collection<TypeApartment> {
+    return this.db.collection(process.env.DB_COLLECTION_TYPE_APARTMENTS as string)
   }
 
   static getInstance() {
