@@ -20,6 +20,30 @@ class ApartmentsService {
       isSuccess: true
     }
   }
+
+  async readAll() {
+    const result = await instanceDatabase()
+      .apartments.aggregate([
+        {
+          $lookup: {
+            from: process.env.DB_COLLECTION_TYPE_APARTMENTS,
+            localField: 'type_apartment_id',
+            foreignField: '_id',
+            as: 'typeApartment'
+          }
+        },
+        {
+          $lookup: {
+            from: process.env.DB_COLLECTION_UTILITIES,
+            localField: 'utilities',
+            foreignField: '_id',
+            as: 'utilities'
+          }
+        }
+      ])
+      .toArray()
+    return result
+  }
 }
 
 const apartmentsService = new ApartmentsService()

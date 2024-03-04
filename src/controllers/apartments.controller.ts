@@ -13,6 +13,11 @@ class ApartmentsController {
       res.status(HTTP_STATUS.CREATED).json(result)
     }
   }
+
+  async readAll(req: Request, res: Response) {
+    const result = await apartmentsService.readAll()
+    return res.status(HTTP_STATUS.OK).json(result)
+  }
 }
 
 const apartmentsController = new ApartmentsController()
