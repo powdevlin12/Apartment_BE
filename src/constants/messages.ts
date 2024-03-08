@@ -81,3 +81,7 @@ export const APARTMENTS_MESSAGE = {
   NAME_LENGTH_MUST_BE_FROM_6_TO_30: 'Name length must be from from 6 to 30',
   APARTMENT_IS_EXIST: 'type apartment is exist'
 } as const
+
+export const USERS_APARTMENTS_MESSAGE = {
+  SAVE_APARTMENT_SUCCESS: 'Save apartment success'
+} as const

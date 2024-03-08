@@ -10,6 +10,7 @@ import staticsRouter from './routes/static.router'
 import utilitesRouter from './routes/utilities.router'
 import typeApartmentRouter from './routes/typeApartment.router'
 import apartmentRouter from './routes/apartment.router'
+import usersAprtmentsRouter from './routes/usersApartments.router'
 dotenv.config()
 
 const app = express()
@@ -25,6 +26,7 @@ app.use('/statics', staticsRouter)
 app.use('/utilities', utilitesRouter)
 app.use('/type-apartments', typeApartmentRouter)
 app.use('/apartments', apartmentRouter)
+app.use('/users-apartments', usersAprtmentsRouter)
 app.use('/statics/video', express.static(UPLOAD_VIDEO_FOLDER))
 // database
 // run().catch(console.dir)
