@@ -83,5 +83,7 @@ export const APARTMENTS_MESSAGE = {
 } as const
 
 export const USERS_APARTMENTS_MESSAGE = {
-  SAVE_APARTMENT_SUCCESS: 'Save apartment success'
+  SAVE_APARTMENT_SUCCESS: 'Save apartment success',
+  APARTMENT_ID_IS_NOT_EMPTY: 'apartment_id is not empty',
+  THIS_APARTMENT_IS_SAVED: 'This apartment is saved'
 } as const
